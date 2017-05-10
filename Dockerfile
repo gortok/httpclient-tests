@@ -9,5 +9,5 @@ EXPOSE 80
 WORKDIR /app
 
 COPY $source .
-
-ENTRYPOINT ["dotnet", "HttpClientAsync.dll"]
+CMD "/bin/bash"
+#ENTRYPOINT ["dotnet", "HttpClientAsync.dll"]

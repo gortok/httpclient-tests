@@ -18,7 +18,7 @@ namespace HttpClientAsync
                 var i = 0;
                 var max = 0L;
                 var run = 0L;
-                string endpoint = "http://webservice/hello";
+                string endpoint = "http://api-test:8080/webservice/hello";
                 while (i < 100000)
                 {
 
@@ -38,15 +38,15 @@ namespace HttpClientAsync
                     run += localRun;
                     i++;
                 }
-                Console.WriteLine("Number of Runs: {0}", i);
-                Console.WriteLine("Average run is {0}", i / run);
-                Console.WriteLine("High Request was: {0}", max);
+                Console.WriteLine("Number of Runs: {0} ms", i);
+                Console.WriteLine("Average run is {0} ms", i / run);
+                Console.WriteLine("High Request was: {0} ms", max);
 
             }
             Console.WriteLine("End Run");
             foreach (var item in times.OrderBy(k => k.Key))
             {
-                Console.WriteLine("Run Time {0}: Occurences: {1}", item.Key, times[item.Key]);
+                Console.WriteLine("Run Time {0} (ms): Occurences: {1}", item.Key, times[item.Key]);
             }
         }
     }
